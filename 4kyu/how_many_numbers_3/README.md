@@ -1,7 +1,7 @@
 # How Many Numbers III 
 
-[Problem](#Problem)  
-[Solution](#Solution)  
+- [Problem](#Problem)  
+- [Solution](#Solution)  
 
 
 
