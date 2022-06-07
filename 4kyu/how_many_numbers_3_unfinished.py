@@ -3,7 +3,6 @@
 
 import math
 
-from sklearn import multiclass
 
 def find_all(sum_dig, digs):
     if sum_dig > digs*9: # it's impossible to reach the number
@@ -20,15 +19,22 @@ def find_all(sum_dig, digs):
 
     print(lower_bound, upper_bound)
 
-    # don't use a for loop. Since we know the numbers must be ascending
-    # we can skip a large portion of them.
-    # Do it recursively and you don't need digits_ascending
     for i in range(lower_bound, upper_bound + 1):
         if digits_ascending(i):
             val = sum(int(x) for x in str(i))
             if val == sum_dig:
                 ans.append(i)
 
+    # for each digit, it increments from the previous
+    # so set 1 initially, then loop from 1 to 9
+    # if its 2, loop from 2 to 9
+
+    # do a custom range using iter (things using yield thingy)
+    # the yeild thing can be in functions without needing a class.
+    # needs lower_bound, upper_bound.
+    # give it how many digits it is and start value. 
+    # Then in the for loop, if sum(digits) > num, break
+    print(ans)
     if ans:
         return [len(ans), ans[0], ans[-1]]
     else:
@@ -38,5 +44,18 @@ def digits_ascending(num: int) -> bool:
     return str(num) == ''.join(sorted(str(num)))
 
 
-print(find_all(3, 4)) # [8, 118, 334]
+print(find_all(30, 5)) # [8, 118, 334]
 # print(find_all(10, 2))
+
+'''
+11111
+30 - 5 = 25 >= 9
+11119
+30 - 13 = 17 >= 9
+11199
+30 - 21 = 9 >= 9
+11999
+30 - 29 = 1
+12999
+'''
+
