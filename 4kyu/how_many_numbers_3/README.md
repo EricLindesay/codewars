@@ -8,7 +8,7 @@
 ## Problem
 ____________________________________________
 
-[Link](https://www.codewars.com/kata/5877e7d568909e5ff90017e6/train/python)
+[Problem Link](https://www.codewars.com/kata/5877e7d568909e5ff90017e6/train/python)
 
 We want to generate all the numbers of three digits where:
 - the sum of their digits is equal to 10.
