@@ -67,9 +67,7 @@ Seeing that the brute force solution was too slow, I knew a simple way to improv
 We can immediately discount values which are impossible to reach, these being when `sum_dig > 9*digs` and when `sum_dig < digs`.  
 Since we know that the number's digits are ascending, the smallest value is 11111 instead of 10000.  
 Additionally, the upper bound is limited to sum_dig/digs repeated, which I primarily discovered through trialling a lot of different values to see if I could spot any patterns between them.  
-# need to speed check these
 [bound_optimisation.py](bound_optimisation.py)  
-
 
 #### After this, I then found that you can actually directly calculate the lower and upper bounds.  
 The lower bound you can calculate through the following steps:  
@@ -84,11 +82,11 @@ find_all(20,3)
 crude_lower = 111  # start out with all ones
 20 - sum(111) = 17
 17 // 8 = 2
-lower = 199
+lower = 199  # you can safely set the 2 latest numbers to 9
 
 20 - sum(199) = 1
 lower = (1+1)99
-lower = 299
+lower = 299  # update the leading numbers to add up to the goal sum
 ```
 
 The upper bound, you can calculate in a very similar way.  
@@ -98,13 +96,14 @@ Example of Upper Bound
 ```py
 find_all(19,3)
 ceil(19/3) = 7
-crude_upper = 777
-sum(777) - 19 = 2
+crude_upper = 777  # start out with all 7s
+sum(777) - 19 = 2  # there is a difference of two with the goal sum, so remove those two
 
-upper = (7-1)(7-1)7
+upper = (7-1)(7-1)7  # remove the two
 upper = 667
 ```
 [bound_optimisation2.py](bound_optimisation2.py)
 
+# need to speed check these
 
 Do an iter
