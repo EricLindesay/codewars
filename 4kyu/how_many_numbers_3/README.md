@@ -87,9 +87,9 @@ lower = 199  # you can safely set the 2 latest numbers to 9
 20 - sum(199) = 1
 lower = (1+1)99
 lower = 299  # update the leading numbers to add up to the goal sum
-```
+```  
 
-The upper bound, you can calculate in a very similar way.  
+The upper bound, can be calculated in a very similar way.  
 Instead of adding onto the right most value, you take away by one, starting with the left most value and moving towards the end.  
 
 Example of Upper Bound
