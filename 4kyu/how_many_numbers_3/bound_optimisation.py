@@ -14,9 +14,6 @@ def find_all(sum_dig, digs):
     lower_bound = int("1"*(digs))
     upper_bound = int(str(math.ceil(sum_dig/digs))*digs)
 
-    if upper_bound < lower_bound:
-        upper_bound = lower_bound
-
     print(lower_bound, upper_bound)
 
     for i in range(lower_bound, upper_bound + 1):
@@ -25,7 +22,6 @@ def find_all(sum_dig, digs):
             if val == sum_dig:
                 ans.append(i)
 
-    print(ans)
     if ans:
         return [len(ans), ans[0], ans[-1]]
     else:
@@ -35,5 +31,5 @@ def digits_ascending(num: int) -> bool:
     return str(num) == ''.join(sorted(str(num)))
 
 
-print(find_all(30, 5))
+print(find_all(40, 7))
 
