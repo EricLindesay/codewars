@@ -57,9 +57,16 @@ _______________
 
 ## Solution
 
-Initial Thoughts
-- do it manually
+### Initial Thoughts
+My initial thought was to just loop through every value and brute-force the solution.   
+I knew this would likely not be efficient enough but a bad solution is better than no solution.  
+[brute_force.py](brute_force.py)
 
-Optimise the lower and upper bounds
+### Bound Optimisation
+Seeing that the brute force solution was too slow, I knew a simple way to improve the solution is to reduce the search space.  
+We can immediately discount values which are impossible to reach, these being when `sum_dig > 9*digs` and when `sum_dig < digs`.  
+Since we know that the number's digits are ascending, the smallest value is 11111 instead of 10000.  
+Additionally, the upper bound is limited to sum_dig/digs repeated, which I primarily discovered through trialling a lot of different values to see if I could spot any patterns between them.  
+[bound_optimisation.py](bound_optimisation.py)
 
 Do an iter

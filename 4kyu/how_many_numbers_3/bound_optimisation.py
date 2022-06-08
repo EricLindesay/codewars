@@ -25,15 +25,6 @@ def find_all(sum_dig, digs):
             if val == sum_dig:
                 ans.append(i)
 
-    # for each digit, it increments from the previous
-    # so set 1 initially, then loop from 1 to 9
-    # if its 2, loop from 2 to 9
-
-    # do a custom range using iter (things using yield thingy)
-    # the yeild thing can be in functions without needing a class.
-    # needs lower_bound, upper_bound.
-    # give it how many digits it is and start value. 
-    # Then in the for loop, if sum(digits) > num, break
     print(ans)
     if ans:
         return [len(ans), ans[0], ans[-1]]
@@ -44,26 +35,5 @@ def digits_ascending(num: int) -> bool:
     return str(num) == ''.join(sorted(str(num)))
 
 
-print(find_all(30, 5)) # [8, 118, 334]
-# print(find_all(10, 2))
-
-'''
-11111
-30 - 5 = 25 >= 9
-11119
-30 - 13 = 17 >= 9
-11199
-30 - 21 = 9 >= 9
-11999
-30 - 29 = 1
-12999
-
-
-111
-20 - 3 = 17 / 8 = 2
-199
-20 - 19 = 1
-299
-'''
-
+print(find_all(30, 5))
 
