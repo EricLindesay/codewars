@@ -3,8 +3,6 @@
 - [Problem](#Problem)  
 - [Solution](#Solution)  
 
-
-
 ## Problem
 ____________________________________________
 
@@ -60,14 +58,14 @@ _______________
 ### Initial Thoughts
 My initial thought was to just loop through every value and brute-force the solution.   
 I knew this would likely not be efficient enough but a bad solution is better than no solution.  
-[brute_force.py](brute_force.py)
+[brute_force.py](solutions/brute_force.py)
 
 ### Bound Optimisation
 Seeing that the brute force solution was too slow, I knew a simple way to improve the solution is to reduce the search space.  
 We can immediately discount values which are impossible to reach, these being when `sum_dig > 9*digs` and when `sum_dig < digs`.  
 Since we know that the number's digits are ascending, the smallest value is 11111 instead of 10000.  
 Additionally, the upper bound is limited to sum_dig/digs repeated, which I primarily discovered through trialling a lot of different values to see if I could spot any patterns between them.  
-[bound_optimisation.py](bound_optimisation.py)  
+[bound_optimisation.py](solutions/bound_optimisation.py)  
 
 #### After this, I then found that you can actually directly calculate the lower and upper bounds.  
 The lower bound you can calculate through the following steps:  
@@ -102,8 +100,16 @@ sum(777) - 19 = 2  # there is a difference of two with the goal sum, so remove t
 upper = (7-1)(7-1)7  # remove the two
 upper = 667
 ```
-[bound_optimisation2.py](bound_optimisation2.py)
+[bound_optimisation2.py](solutions/bound_optimisation2.py)
 
-# need to speed check these
+#### Checking which is better
+Although I highly suspected that bound_optimisation2 is better than bound_optimisation, I created a function to test the two programs against each other with random input.  
+This test resulted in optimisation2 taking about half as much time as optimisation1.  
 
-Do an iter
+### Using an Iter
+A large inefficiency with using range() is that it goes through values we know will be invalid.  
+For example, if we have `120`, we know that `121` is also invalid, so we should instead just skip to `122`.  
+This is what the ascending_numbers() function does.  
+If it sees that the numbers are no longer ascending, it would skip over `121` and go straight so something which is valid and is ascending.     
+[iter.py](solutions/iter.py)
+
