@@ -1,5 +1,6 @@
 import re
 
+
 def strip_comments(string, markers):
     if not markers:
         return string
