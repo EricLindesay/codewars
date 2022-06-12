@@ -1,7 +1,7 @@
 # Minimal Cost Binary Search Trees
 Incomplete
 - [Problem](#Problem)
-- [Solution] (#Solution)
+- [Solution](#Solution)
 
 ## Problem
 ------
@@ -15,10 +15,10 @@ Each node has a `weight` attribute which could represent how often the node is a
 
 Now we are getting to the more challenging part of this kata. Your final task is to write a function `make_min_tree` that takes a non-empty list of nodes as argument and returns a tree with minimal cost. The list passed as argument is sorted in ascending order. No two nodes in the list are equal (under the definition of "equal" provided by `__eq__` and `__ne__`). For this last part, your code will be tested with lists up to a length of 100. (Note: My algorithm is quadratic in space and cubic in time, but I am not sure it cannot be done better.)
 
+
 ## Solution
 ---------
 Finding the cost was easy, its just a recursive function.  
-
 
 ### Notes
 So when you pick the root nodes, take the left sublist and the right sublist for all the scenarios and find the best trees for those.
