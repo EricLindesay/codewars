@@ -4,7 +4,6 @@ Incomplete
 - [Solution](#Solution)
 
 ## Problem
-------
 [Problem Link](https://www.codewars.com/kata/571a7c0cf24bdf99a8000df5/train/python)
 
 The description that follows presumes that you have completed [Binary Search Trees](https://www.codewars.com/kata/binary-search-trees). Before starting on this kata, fill in the code for Tree's `__eq__`, `__ne__`, and `__str__` methods as described and verified by that kata.
@@ -17,7 +16,6 @@ Now we are getting to the more challenging part of this kata. Your final task is
 
 
 ## Solution
----------
 Finding the cost was easy, its just a recursive function.  
 
 ### Notes
